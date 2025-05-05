@@ -47,7 +47,7 @@ erDiagram
     COTTAGE ||--o{ INTERIOR             : has_interior
     INTERIOR_ITEM_CATEGORIES ||--o{ INTERIOR : categorises
     COTTAGE |o--o{ RENT_ORDERS          : rented_in
-    CLIENTS ||--o{ RENT_ORDERS          : places
+    CLIENTS ||--o{ RENT_ORDERS          : places```
 
 
 ## Описание схемы словами

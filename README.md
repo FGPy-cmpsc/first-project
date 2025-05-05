@@ -48,7 +48,7 @@ erDiagram
     %% Relationships
     COTTAGE ||--o{ INTERIOR                 : has_interior
     INTERIOR_ITEM_CATEGORIES ||--o{ INTERIOR : categorises
-    COTTAGE |o--o{ RENT_ORDERS              : rented_in
+    COTTAGE ||--o{ RENT_ORDERS              : rented_in
     CLIENTS ||--|{ RENT_ORDERS              : places
 ```
 

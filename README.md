@@ -46,10 +46,10 @@ erDiagram
     }
 
     %% Relationships
-    COTTAGE ||--o{ INTERIOR                 : 
-    INTERIOR_ITEM_CATEGORIES ||--o{ INTERIOR : 
-    COTTAGE ||--o{ RENT_ORDERS              : 
-    CLIENTS ||--|{ RENT_ORDERS              : 
+    COTTAGE ||--o{ INTERIOR                 : has_interior
+    INTERIOR_ITEM_CATEGORIES ||--o{ INTERIOR : categorises
+    COTTAGE ||--o{ RENT_ORDERS              : rented_in
+    CLIENTS ||--|{ RENT_ORDERS              : places
 ```
 
 ## Описание сущностей

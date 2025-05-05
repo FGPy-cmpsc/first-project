@@ -1,5 +1,3 @@
-### ER‑диаграмма (Mermaid)
-
 ```mermaid
 erDiagram
     COTTAGE {
@@ -30,9 +28,9 @@ erDiagram
         VARCHAR client_name
         VARCHAR client_surname
         VARCHAR client_patronymic
-        VARCHAR passport  UNIQUE
-        VARCHAR phone     UNIQUE
-        VARCHAR email     UNIQUE
+        VARCHAR passport
+        VARCHAR phone
+        VARCHAR email
     }
 
     RENT_ORDERS {

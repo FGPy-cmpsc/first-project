@@ -1,6 +1,4 @@
-# 📦 Cottage Rentals Database — Entities & Relationships
-
-## Entity‑Relationship (ER) diagram
+### ER‑диаграмма (Mermaid)
 
 ```mermaid
 erDiagram
@@ -21,8 +19,8 @@ erDiagram
 
     INTERIOR {
         INT item_id PK
-        INT related_cottage_id FK ➜ COTTAGE.cottage_id
-        INT item_category_id FK ➜ INTERIOR_ITEM_CATEGORIES.item_category_id
+        INT related_cottage_id FK
+        INT item_category_id FK
         VARCHAR item_name
         INT floor
     }
@@ -32,15 +30,15 @@ erDiagram
         VARCHAR client_name
         VARCHAR client_surname
         VARCHAR client_patronymic
-        VARCHAR passport  (unique)
-        VARCHAR phone     (unique)
-        VARCHAR email     (unique)
+        VARCHAR passport  UNIQUE
+        VARCHAR phone     UNIQUE
+        VARCHAR email     UNIQUE
     }
 
     RENT_ORDERS {
         INT rent_id PK
-        INT cottage_id   FK ➜ COTTAGE.cottage_id   (nullable)
-        INT client_id    FK ➜ CLIENTS.client_id
+        INT cottage_id FK
+        INT client_id  FK
         DATE date_from
         DATE date_to
         INT total_cost
@@ -48,7 +46,7 @@ erDiagram
     }
 
     %% Relationships
-    COTTAGE           ||--o{ INTERIOR             : "has interior"
-    INTERIOR_ITEM_CATEGORIES ||--o{ INTERIOR      : "categorises"
-    COTTAGE           |o--o{ RENT_ORDERS          : "is rented in"
-    CLIENTS           ||--o{ RENT_ORDERS          : "places"
+    COTTAGE ||--o{ INTERIOR             : has_interior
+    INTERIOR_ITEM_CATEGORIES ||--o{ INTERIOR : categorises
+    COTTAGE |o--o{ RENT_ORDERS          : rented_in
+    CLIENTS ||--o{ RENT_ORDERS          : places
